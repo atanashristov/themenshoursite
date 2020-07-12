@@ -315,7 +315,7 @@ $(window).on('load', function(e) {
   workGrid();
 
   //Scroll spy menu
-  $('body').scrollspy({ target: '#navbar-murdock', offset: 180 });
+  $('body').scrollspy({ target: '#navbar-themenshour', offset: 180 });
 
 
   $('.menu-item a[href*="#"]').on('click', function() {
