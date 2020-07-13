@@ -17,19 +17,19 @@
 */
 
 @font-face {
-  font-family: 'Murdock';
-  src:  url('../fonts/murdock-icons/Murdock.eot?oer05i');
-  src:  url('../fonts/murdock-icons/Murdock.eot?oer05i#iefix') format('embedded-opentype'),
-    url('../fonts/murdock-icons/Murdock.ttf?oer05i') format('truetype'),
-    url('../fonts/murdock-icons/Murdock.woff?oer05i') format('woff'),
-    url('../fonts/murdock-icons/Murdock.svg?oer05i#Murdock') format('svg');
+  font-family: 'themenshour';
+  src:  url('../fonts/themenshour-icons/themenshour.eot?oer05i');
+  src:  url('../fonts/themenshour-icons/themenshour.eot?oer05i#iefix') format('embedded-opentype'),
+    url('../fonts/themenshour-icons/themenshour.ttf?oer05i') format('truetype'),
+    url('../fonts/themenshour-icons/themenshour.woff?oer05i') format('woff'),
+    url('../fonts/themenshour-icons/themenshour.svg?oer05i#themenshour') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Murdock' !important;
+  font-family: 'themenshour' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -65,6 +65,43 @@
 }
 .icon-scissors:before {
   content: "\e907";
+}
+
+.icons8 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+}
+.icons8-barber-brush-50 {
+  background-image: url(../images/site/icons8-barber-brush-50.png);
+}
+.icons8-barber-chair-50 {
+  background-image: url(../images/site/icons8-barber-chair-50.png);
+}
+.icons8-barber-clippers-50 {
+  background-image: url(../images/site/icons8-barber-clippers-50.png);
+}
+.icons8-barber-scissors-50 {
+  background-image: url(../images/site/icons8-barber-scissors-50.png);
+}
+.icons8-beard-trimmer-50 {
+  background-image: url(../images/site/icons8-beard-trimmer-50.png);
+}
+.icons8-straight-razor-50 {
+  background-image: url(../images/site/icons8-straight-razor-50.png);
+}
+.icons8-man-combing-hair-50 {
+  background-image: url(../images/site/icons8-man-combing-hair-50.png);
+}
+.icons8-shampoo-50 {
+  background-image: url(../images/site/icons8-shampoo-50.png);
+}
+.icons8-barbershop-50 {
+  background-image: url(../images/site/icons8-barbershop-50.png);
 }
 
 
@@ -199,8 +236,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.navbar-default {
+header.overflow.invert .navbar-default {
   background-color: transparent;
+}
+.navbar-default {
+  background-color: rgba(150, 150, 150, 0.5);
   border: none;
 }
 .navbar-default .navbar-nav > li > a,
@@ -1017,10 +1057,12 @@ font-family: 'Merriweather', sans-serif;
 }
 .pretitle.left {
   text-align: left;
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
 }
 .pretitle.left:before {
-  border-color: #b59472;
+  /* border-color: #b59472; */
+  border-color: #996515;
 }
 .pretitle.left:after {
   display: none;
@@ -1104,7 +1146,8 @@ font-family: 'Merriweather', sans-serif;
   color: #ffffff;
 }
 .title.colored {
-  color: #b59472 !important;
+  /* color: #b59472 !important; */
+  color: #996515 !important;
 }
 .title.big {
   margin-top: 16px;
@@ -1166,7 +1209,8 @@ font-family: 'Merriweather', sans-serif;
   color: #ffffff;
 }
 .subtitle.colored {
-  color: #b59472 !important;
+  /* color: #b59472 !important; */
+  color: #996515 !important;
 }
 .subtitle.big {
   font-size: 22px;
@@ -1489,6 +1533,7 @@ header.overflow.fixed {
 }
 .navbar-default .navbar-nav.invert > li > a {
   color: #ffffff;
+  font-weight: bold;;
 }
 .navbar-default .navbar-nav.invert > li.active > a,
 .navbar-default .navbar-nav.invert > li.active > a:hover,
@@ -1502,7 +1547,8 @@ header.overflow.fixed {
 .navbar-default .navbar-nav.invert > li.active > a:focus:after,
 .navbar-default .navbar-nav.invert > li > a:hover:after,
 .navbar-default .navbar-nav.invert > li > a:focus:after {
-  background-color: #b59472;
+  /* background-color: #b59472; */
+  background-color: #996515
 }
 .navbar-default.center .navbar-header {
   float: none;
@@ -1661,7 +1707,8 @@ footer form.contact-form input[type=submit] {
   position: absolute;
   left: -35px;
   font-size: 25px;
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
 }
 .contact-link.fa-envelope-o:before {
   left: -36px;
@@ -1754,6 +1801,7 @@ footer form.contact-form input[type=submit] {
   position: absolute;
   bottom: 10px;
   z-index: 2;
+  display: none;
 }
 .intro .slides-pagination a {
   display: inline-block;
@@ -1871,7 +1919,8 @@ footer form.contact-form input[type=submit] {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #b59472;
+  /* background-color: #b59472; */
+  background-color: #996515;
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
           animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
@@ -1977,7 +2026,7 @@ footer form.contact-form input[type=submit] {
   text-align: center;
 }
 .features div[class*="col-"] {
-  min-height: 300px;
+  min-height: 200px;
 }
 @media (min-width: 992px) {
     .features div[class*="col-"] {
@@ -2302,7 +2351,7 @@ footer form.contact-form input[type=submit] {
   font-family: 'Merriweather', sans-serif;
 }
 .banner-tabs p:not(:last-child) {
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
 }
 .tabsmodule .row .banner {
     height: 500px;
@@ -2380,8 +2429,8 @@ footer form.contact-form input[type=submit] {
   -o-transition: all 600ms ease;
   -ms-transition: all 600ms ease;
 }
-// .social-links li:hover:before,
-// .social-links li:active:before,
+ /* .social-links li:hover:before, */
+ /* .social-links li:active:before, */
 .icon-links li:hover:before,
 .icon-links li:active:before {
   transform: scale(1.2);
@@ -3110,7 +3159,8 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
   }
 }
 .counter li .title-counter {
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0;
@@ -3440,7 +3490,8 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
 .title-list-experties {
   text-align: center;
   font-size: 30px;
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
   font-weight: 300;
 }
 .list-experties {
@@ -3487,7 +3538,8 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
   transition: opacity .2s linear;
 }
 .team-member .list-social li a:hover {
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
 }
 .team-member .img-circle {
   max-width: 216px;
@@ -3841,7 +3893,7 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
     padding: 12px;
   }
 }
-.filters li:first-child:before {
+/* .filters li:first-child:before {
   content: "";
   height: 7px;
   width: 18px;
@@ -3864,7 +3916,7 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
   top: 23px;
   left: 50%;
   margin-left: -100px;
-}
+} */
 .filters li:first-child.is-checked,
 .filters li:first-child:hover {
   border: none;
@@ -7759,7 +7811,7 @@ body.dark .inverse .btn-arrow.invert:after {
   background-image: none;
 }
 #bg-home-grid0 {
-  background-image: url('../images/demo/home/grid0.jpg');
+  background-image: url('../images/site/profile.jpg');
 }
 #post1-pagination-oldpost {
   background-image: url('../images/demo/post2/pagination-oldpost.jpg');
@@ -7812,7 +7864,8 @@ body.dark .inverse .btn-arrow.invert:after {
 .title-small {
   font-family: Oswald;
   font-weight: bold;
-  color: #b59472;
+  /* color: #b59472; */
+  color: #996515;
   font-size: 20px;
 }
 .font1 {
@@ -7845,14 +7898,21 @@ body.dark .list-experties {
 body.dark .thumbnails.work5 .rollover {
     display: block;
     background-color: transparent;
-        transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
     -webkit-transition: all .5s ease;
     -ms-transition: all .5s ease;
     -o-transition: all .5s ease;
     -moz-transition: all .5s ease;
 }
 .thumbnail:hover .rollover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.thumbnails.work5 .thumbnail img {
+  transition: transform .2s; /* Animation */
+}
+.thumbnails.work5 .thumbnail:hover img {
+  transform: scale(1.1);
 }
 body.dark .thumbnails.work5 .thumbnail:hover .rollover {
     background-color: rgba(0, 0, 0, 0.6);

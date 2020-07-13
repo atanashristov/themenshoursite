@@ -28,7 +28,7 @@ function setMarkers(map) {
     map: map,
     icon: image,
     shape: shape,
-    title: 'Murdock',
+    title: 'themenshour',
     zIndex: 1
   });
 }
