@@ -1844,6 +1844,48 @@ footer form.contact-form input[type=submit] {
 .intro .playerVideo:hover .play-video {
   display: block;
 }
+
+.intro .business-hours {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  z-index: 2;
+  text-align: left;
+  background-color: rgba(150, 150, 150, 0.5);
+  border: none;
+  padding: 10px 20px;
+}
+.intro .business-hours span {
+  display: block;
+}
+
+@media (min-width: 380px) {
+  .intro .business-hours {
+    top: 110px;
+  }
+}
+@media (min-width: 768px) {
+  .intro .business-hours {
+    top: 150px;
+  }
+}
+@media (min-width: 1199px) {
+  .intro .business-hours {
+    top: 160px;
+  }
+}
+@media (min-width: 1200px) {
+  .intro .business-hours {
+    top: 170px;
+  }
+}
+@media (min-width: 1600px) {
+  .intro .business-hours {
+    top: 180px;
+  }
+}
+
+
 /* scaleUp */
 .owl-fadeUp-in {
   -webkit-animation: scaleUpFrom 0.8s ease-in-out both;
