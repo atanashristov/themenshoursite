@@ -271,9 +271,14 @@ textarea {
 .vcenter {
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .vcenter {
+    top: 50%;
+  }
 }
 .voffset-40 {
   padding-bottom: -40px;
@@ -1859,15 +1864,15 @@ footer form.contact-form input[type=submit] {
   display: block;
 }
 
-.intro .business-hours .office-closed {
+.intro .business-hours .special-time {
   border: none;
   background-color: rgba(230, 227, 70, 1.0);
   color: black;
   margin-top: 10px;
   padding: 10px;
 }
-.intro .business-hours .office-closed p {
-  letter-spacing: 1px;
+.intro .business-hours .special-time p {
+  letter-spacing: 0px;
   font-weight: bold;
 }
 
@@ -1875,9 +1880,12 @@ footer form.contact-form input[type=submit] {
   .intro .business-hours {
     top: 110px;
   }
-  .intro .business-hours .office-closed
+  .intro .business-hours .special-time
   {
     padding: 20px;
+  }
+  .intro .business-hours .special-time p {
+    letter-spacing: 1px;
   }
 }
 @media (min-width: 768px) {
@@ -7993,4 +8001,3 @@ body.dark .thumbnails.work5 .thumbnail:hover .rollover {
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
 }
-
