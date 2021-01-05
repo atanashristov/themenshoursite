@@ -3,5 +3,5 @@
 Run:
 
 ```bash
-static-server
+static-server -z
 ```
