@@ -1899,6 +1899,34 @@ footer form.contact-form input[type=submit] {
   line-height: 24px;
 }
 
+.bs-spacer {
+  clear: both;
+  height: 50px;
+}
+.bs-container {
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: none;
+  z-index: 100;
+}
+.bs-content {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  background-color: rgba(139,0,139,0.85); /* darkmagenta; */
+  opacity: 50;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.bs-message {
+  color: yellow;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+
 @media (min-width: 380px) {
   .intro .business-hours {
     top: 110px;
