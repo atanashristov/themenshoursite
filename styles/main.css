@@ -1215,6 +1215,14 @@ input {
 .subtitle.invert {
   color: #ffffff;
 }
+.working_hours {
+  background: rgba(255, 255, 255, 0.05);
+}
+.working_hours .subtitle.invert {
+  font-weight: bold;
+  text-shadow: 2px 2px #b59472;
+}
+
 .subtitle.colored {
   /* color: #b59472 !important; */
   color: #996515 !important;
@@ -1860,12 +1868,23 @@ footer form.contact-form input[type='submit'] {
   left: 10px;
   z-index: 2;
   text-align: left;
-  background-color: rgba(150, 150, 150, 0.5);
+  /* background-color: rgba(150, 150, 150, 0.5); */
+  background-color: rgba(255, 255, 255, 0.2);
   border: none;
   padding: 10px 20px;
 }
 .intro .business-hours span {
   display: block;
+}
+.contact-basic .special-time,
+.contact-basic .working-time {
+  border: none;
+  background-color: rgba(230, 227, 70, 1);
+  color: black;
+  padding: 10px 0;
+}
+.contact-basic .working-time {
+  background-color: rgb(229, 229, 194);
 }
 
 .intro .business-hours .special-time {
@@ -1878,6 +1897,7 @@ footer form.contact-form input[type='submit'] {
 .intro .business-hours .special-time p {
   letter-spacing: 0px;
   font-weight: bold;
+  line-height: normal;
 }
 .special-container {
   display: flex;
