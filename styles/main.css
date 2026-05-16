@@ -2,24 +2,52 @@
 
 /*------------------------------------------------------------------
 [Table of contents]
-0. Plugins
-1. Default + reset
-2. Header / #header
-3. Navigation / #navbar
-4. Footer / #footer
-5. Components
-  5.01. intro
-6. Demo
+0. Responsive Map
+1. Plugins
+2. Default + reset
+3. Header / #header
+4. Navigation / #navbar
+5. Footer / #footer
+6. Components
+  6.01. intro
+7. Demo
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
-[0. Plugins]
+[0. Responsive Map]
+*/
+.map-responsive {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.map-responsive iframe {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .map-responsive {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .map-responsive iframe {
+    height: 250px;
+  }
+}
+
+/*------------------------------------------------------------------
+[1. Plugins]
 */
 
 @font-face {
   font-family: 'themenshour';
   src: url('../fonts/themenshour-icons/themenshour.eot?oer05i');
-  src: url('../fonts/themenshour-icons/themenshour.eot?oer05i#iefix')
+  src:
+    url('../fonts/themenshour-icons/themenshour.eot?oer05i#iefix')
       format('embedded-opentype'),
     url('../fonts/themenshour-icons/themenshour.ttf?oer05i') format('truetype'),
     url('../fonts/themenshour-icons/themenshour.woff?oer05i') format('woff'),
@@ -869,6 +897,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   color: #000000;
+  touch-action: manipulation;
+  overscroll-behavior: none;
 }
 .color-light {
   color: #ffffff;
@@ -876,6 +906,7 @@ body {
 body {
   scrollbar-face-color: #ffffff;
   scrollbar-track-color: #000000;
+  overflow-y: auto;
 }
 input:focus,
 button:focus {
@@ -1050,6 +1081,7 @@ input {
   font-style: italic;
   color: #000000;
   text-align: center;
+  white-space: nowrap;
 }
 .pretitle:after,
 .pretitle:before {
@@ -1529,9 +1561,15 @@ header.overflow.fixed {
     display: block;
     left: 50%;
     position: absolute;
-    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -webkit-transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
+    -o-transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
+    transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
     width: 0;
   }
 }
@@ -1944,7 +1982,7 @@ footer form.contact-form input[type='submit'] {
   text-align: center;
   margin: 0 auto;
   width: 90%;
-  background-color: rgba(139, 0, 139, 0.85); /* darkmagenta; */
+  background-color: rgba(0, 0, 255, 0.85); /* darkmagenta; */
   opacity: 50;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -1953,6 +1991,30 @@ footer form.contact-form input[type='submit'] {
   color: yellow;
   line-height: 50px;
   vertical-align: middle;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* On mobile (screens smaller than 768px), stack them vertically */
+@media (max-width: 767px) {
+  .bs-message {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; /* Adjust spacing between lines */
+    font-size: 14px;
+  }
+
+  .bs-message-segment {
+    line-height: normal; /* Adjust line height for better spacing on mobile */
+  }
+
+  /* Hide the pipe character entirely on mobile */
+  .bs-message-separator {
+    display: none;
+  }
 }
 
 @media (min-width: 380px) {
@@ -2822,9 +2884,15 @@ form.contact-form input[type='submit'] {
   bottom: -13px;
   border-color: transparent;
   left: calc(50% - 12px);
-  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  -webkit-transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  -o-transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
   width: 0;
 }
 .list-horizontal-links li a.active,
@@ -4113,9 +4181,15 @@ ul.slider-twitter .flickity-page-dots .dot.is-selected {
   bottom: -7px;
   border-color: transparent;
   left: calc(50% - 12px);
-  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  -webkit-transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  -o-transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
   width: 0;
 }
 .filters li:not(:first-child).is-checked,
@@ -6343,11 +6417,15 @@ form .btn {
   transition-delay: 0.2s, 0s;
 }
 .dropdown-icon--animate span::before {
-  transition-property: top, -webkit-transform;
+  transition-property:
+    top,
+    -webkit-transform;
   transition-property: top, transform;
 }
 .dropdown-icon--animate span::after {
-  transition-property: bottom, -webkit-transform;
+  transition-property:
+    bottom,
+    -webkit-transform;
   transition-property: bottom, transform;
 }
 .dropdown-icon--animate.is-active {
@@ -6441,7 +6519,9 @@ form .btn {
 .overlay-hugeinc {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0s 0.5s;
+  transition:
+    opacity 0.5s,
+    visibility 0s 0.5s;
 }
 .overlay-hugeinc.open {
   opacity: 1;
@@ -6457,8 +6537,12 @@ form .btn {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
   transform: translateY(-25%) rotateX(35deg);
-  transition: -webkit-transform 0.5s, opacity 0.5s;
-  transition: transform 0.5s, opacity 0.5s;
+  transition:
+    -webkit-transform 0.5s,
+    opacity 0.5s;
+  transition:
+    transform 0.5s,
+    opacity 0.5s;
 }
 .overlay-hugeinc.open nav ul {
   opacity: 1;
