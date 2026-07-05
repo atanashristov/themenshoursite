@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Men's Hour — Men's Quality Grooming</title>
+    <meta
+      name="description"
+      content="The Men's Hour, The Colony TX — quality grooming, classic and modern barbering by master barber Ty."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#14110F', // near-black charcoal, base bg
+              char: '#1C1815', // panel charcoal
+              char2: '#241F1B',
+              cream: '#F3ECE0', // primary light text / bg
+              creamdim: '#D8CFBE',
+              brass: '#C6963A', // primary accent
+              brasslt: '#E3C077',
+              burg: '#6E2A2A', // secondary accent
+              burglt: '#8C3B37',
+            },
+            fontFamily: {
+              display: ['Oswald', 'sans-serif'],
+              body: ['"Work Sans"', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-padding-top: 84px;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+      .font-display {
+        font-family: 'Oswald', sans-serif;
+      }
+
+      /* Barber-pole stripe divider — the page's signature motif */
+      .pole-stripe {
+        height: 10px;
+        background: repeating-linear-gradient(
+          -45deg,
+          #c6963a 0 18px,
+          #6e2a2a 18px 36px,
+          #f3ece0 36px 54px
+        );
+      }
+
+      /* Ticket-style service card */
+      .ticket {
+        position: relative;
+        background: #1c1815;
+        border: 1px solid rgba(198, 150, 58, 0.25);
+      }
+      .ticket::before,
+      .ticket::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: #0b0a08;
+        border-radius: 9999px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .ticket::before {
+        left: -9px;
+      }
+      .ticket::after {
+        right: -9px;
+      }
+      .ticket-notch {
+        border-left: 2px dashed rgba(198, 150, 58, 0.35);
+      }
+
+      .badge-price {
+        box-shadow: 0 0 0 3px rgba(198, 150, 58, 0.15);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-up.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gallery-item {
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover {
+        transform: scale(1.04);
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #14110f;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6e2a2a;
+        border-radius: 6px;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #c6963a;
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-up,
+        .gallery-item {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-ink text-cream antialiased">
+    <div id="top"></div>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur border-b border-brass/20"
+    >
+      <div
+        class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between h-[84px]"
+      >
+        <a href="#top" class="flex items-center gap-3 group">
+          <span
+            class="w-11 h-11 rounded-full border-2 border-brass flex items-center justify-center font-display text-lg tracking-wide text-brass group-hover:bg-brass group-hover:text-ink transition"
+            >TH</span
+          >
+          <span class="font-display leading-tight">
+            <span class="block text-cream text-lg tracking-wide"
+              >THE MEN'S HOUR</span
+            >
+            <span
+              class="block text-brass text-[11px] tracking-[0.25em] uppercase"
+              >Quality Grooming</span
+            >
+          </span>
+        </a>
+
+        <nav
+          class="hidden md:flex items-center gap-9 font-display uppercase text-sm tracking-wider text-creamdim"
+        >
+          <a href="#top" class="hover:text-brass transition">Home</a>
+          <a href="#about" class="hover:text-brass transition">About</a>
+          <a href="#services" class="hover:text-brass transition">Services</a>
+          <a href="#gallery" class="hover:text-brass transition">Gallery</a>
+          <a href="#contact" class="hover:text-brass transition">Contact</a>
+        </nav>
+
+        <a
+          href="https://square.site/book/GH406Q2X6H4HC/the-men-s-hour-the-colony-tx"
+          target="_blank"
+          rel="noopener"
+          class="hidden md:inline-block bg-brass text-ink font-display uppercase text-sm tracking-wider px-5 py-2.5 rounded-sm hover:bg-brasslt transition"
+        >
+          Book Now
+        </a>
+
+        <button
+          id="menuBtn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          class="md:hidden text-cream"
+        >
+          <svg
+            id="iconMenu"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            id="iconClose"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden bg-char border-t border-brass/20"
+      >
+        <nav
+          class="flex flex-col px-6 py-4 gap-4 font-display uppercase text-sm tracking-wider text-creamdim"
+        >
+          <a href="#top" class="mobile-link py-1 hover:text-brass">Home</a>
+          <a href="#about" class="mobile-link py-1 hover:text-brass">About</a>
+          <a href="#services" class="mobile-link py-1 hover:text-brass"
+            >Services</a
+          >
+          <a href="#gallery" class="mobile-link py-1 hover:text-brass"
+            >Gallery</a
+          >
+          <a href="#contact" class="mobile-link py-1 hover:text-brass"
+            >Contact</a
+          >
+          <a
+            href="https://square.site/book/GH406Q2X6H4HC/the-men-s-hour-the-colony-tx"
+            target="_blank"
+            rel="noopener"
+            class="bg-brass text-ink text-center px-5 py-2.5 rounded-sm mt-1"
+            >Book Now</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section
+      class="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden"
+    >
+      <img
+        src="images/site/slider.jpg"
+        alt="The Men's Hour barbershop"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/70 to-ink"
+      ></div>
+
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <p
+          class="font-display uppercase tracking-[0.35em] text-brass text-xs md:text-sm mb-5"
+        >
+          The Colony, Texas
+        </p>
+        <h1
+          class="font-display uppercase leading-[1.05] text-4xl sm:text-5xl md:text-6xl"
+        >
+          Welcome to <span class="text-brass">The Men's Hour</span>
+        </h1>
+        <p
+          class="font-display uppercase tracking-wide text-xl md:text-2xl text-creamdim mt-4"
+        >
+          Focusing on Quality Grooming
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-9">
+          <a
+            href="#services"
+            class="font-display uppercase text-sm tracking-wider bg-brass text-ink px-7 py-3.5 rounded-sm hover:bg-brasslt transition"
+          >
+            Services &amp; Prices
+          </a>
+          <a
+            href="https://square.site/book/GH406Q2X6H4HC/the-men-s-hour-the-colony-tx"
+            target="_blank"
+            rel="noopener"
+            class="font-display uppercase text-sm tracking-wider border border-cream/40 text-cream px-7 py-3.5 rounded-sm hover:border-brass hover:text-brass transition"
+          >
+            Book Appointment
+          </a>
+        </div>
+
+        <p class="mt-10 text-creamdim/80 text-sm tracking-wide">
+          Tue–Fri: 9am – 7pm &nbsp;·&nbsp; Sat: 9am – 4pm
+        </p>
+      </div>
+
+      <a
+        href="#about"
+        aria-label="Scroll to About"
+        class="absolute bottom-7 left-1/2 -translate-x-1/2 text-brass animate-bounce"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </a>
+    </section>
+
+    <div class="pole-stripe"></div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="bg-ink py-20 md:py-28">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center"
+      >
+        <div class="fade-up">
+          <p
+            class="font-display uppercase tracking-[0.3em] text-brass text-xs mb-3"
+          >
+            Introducing
+          </p>
+          <h2 class="font-display uppercase text-3xl md:text-4xl mb-6">
+            The Men's Hour
+          </h2>
+          <p class="text-creamdim leading-relaxed mb-5">
+            This is The Men's Hour, focusing on quality grooming.
+          </p>
+          <h3 class="font-display uppercase text-xl text-brasslt mb-3">
+            Master Barber "Ty"
+          </h3>
+          <p class="text-creamdim leading-relaxed mb-4">
+            Ty, the owner and operator of The Men's Hour, is a master barber
+            with over twenty five years in men's grooming. His focus is on
+            no-rush quality services for his clients while understanding classic
+            and modern styles.
+          </p>
+          <p class="text-creamdim leading-relaxed mb-8">
+            Come and relax today at The Men's Hour. Let Ty refresh your image
+            and give you the confidence you need. No more worrying if your
+            haircut will be good — know you are getting a great service.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#services"
+              class="font-display uppercase text-sm tracking-wider bg-brass text-ink px-6 py-3 rounded-sm hover:bg-brasslt transition"
+              >Learn More</a
+            >
+            <a
+              href="#gallery"
+              class="font-display uppercase text-sm tracking-wider border border-brass/50 text-brass px-6 py-3 rounded-sm hover:bg-brass hover:text-ink transition"
+              >View Work</a
+            >
+          </div>
+        </div>
+
+        <div class="fade-up relative">
+          <div
+            class="aspect-[4/5] rounded-sm overflow-hidden border border-brass/25"
+          >
+            <img
+              src="images/site/profile.jpg"
+              alt="Classic haircut at The Men's Hour"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="absolute -bottom-6 -left-6 bg-char border border-brass/30 rounded-sm px-6 py-5 hidden sm:block"
+          >
+            <p class="font-display text-3xl text-brass leading-none">25+</p>
+            <p class="text-xs uppercase tracking-wider text-creamdim mt-1">
+              Years Experience
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section
+      id="services"
+      class="bg-char2 py-20 md:py-28 border-t border-brass/10"
+    >
+      <div class="max-w-6xl mx-auto px-6 md:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+          <p
+            class="font-display uppercase tracking-[0.3em] text-brass text-xs mb-3"
+          >
+            Barber Services
+          </p>
+          <h2 class="font-display uppercase text-3xl md:text-4xl">
+            Services &amp; Prices
+          </h2>
+          <p class="text-creamdim mt-4 italic">
+            Neck trim complimentary with appointment history.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+          <!-- service items injected via markup -->
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Classic Haircut</h3>
+              <p class="text-creamdim/70 text-sm mt-1">30 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$48</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Skin Fade</h3>
+              <p class="text-creamdim/70 text-sm mt-1">45 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$52</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">
+                Shoulder Length / Long Cut
+              </h3>
+              <p class="text-creamdim/70 text-sm mt-1">45 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$55</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Buzz Haircut</h3>
+              <p class="text-creamdim/70 text-sm mt-1">30 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$42</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Mohawk</h3>
+              <p class="text-creamdim/70 text-sm mt-1">45 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$55</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Kids Haircut</h3>
+              <p class="text-creamdim/70 text-sm mt-1">
+                Age 12 &amp; under · 30 min
+              </p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$38</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">
+                Line Up &amp; Neck Trim
+              </h3>
+              <p class="text-creamdim/70 text-sm mt-1">15 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$15</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Shampoo</h3>
+              <p class="text-creamdim/70 text-sm mt-1">15 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$11</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Goatee</h3>
+              <p class="text-creamdim/70 text-sm mt-1">15 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$20</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">Beard Trim</h3>
+              <p class="text-creamdim/70 text-sm mt-1">15 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$25</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">
+                Hot Lather Face Shave
+              </h3>
+              <p class="text-creamdim/70 text-sm mt-1">45 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$55</span
+            >
+          </div>
+
+          <div
+            class="ticket fade-up rounded-sm px-7 py-6 flex items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="font-display uppercase text-lg">
+                Hot Lather Head Shave
+              </h3>
+              <p class="text-creamdim/70 text-sm mt-1">45 min</p>
+            </div>
+            <span
+              class="badge-price shrink-0 font-display text-brass text-xl border border-brass/40 rounded-full w-16 h-16 flex items-center justify-center"
+              >$52</span
+            >
+          </div>
+        </div>
+
+        <div class="text-center mt-14 fade-up">
+          <a
+            href="https://square.site/book/GH406Q2X6H4HC/the-men-s-hour-the-colony-tx"
+            target="_blank"
+            rel="noopener"
+            class="inline-block font-display uppercase text-sm tracking-wider bg-brass text-ink px-9 py-4 rounded-sm hover:bg-brasslt transition"
+          >
+            Book Appointment Now
+          </a>
+          <p class="text-creamdim/70 text-sm mt-5">
+            Tue–Fri: 9am – 7pm &nbsp;·&nbsp; Sat: 9am – 4pm
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pole-stripe"></div>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="bg-ink py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6 md:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 fade-up">
+          <p
+            class="font-display uppercase tracking-[0.3em] text-brass text-xs mb-3"
+          >
+            Portfolio
+          </p>
+          <h2 class="font-display uppercase text-3xl md:text-4xl">Gallery</h2>
+        </div>
+
+        <div
+          class="flex justify-center gap-3 mb-10 flex-wrap font-display uppercase text-sm tracking-wider"
+        >
+          <button
+            data-filter="all"
+            class="filter-btn active-filter px-5 py-2 rounded-full border border-brass text-ink bg-brass"
+          >
+            All
+          </button>
+          <button
+            data-filter="haircuts"
+            class="filter-btn px-5 py-2 rounded-full border border-brass/40 text-creamdim hover:border-brass hover:text-brass transition"
+          >
+            Haircuts
+          </button>
+          <button
+            data-filter="beard"
+            class="filter-btn px-5 py-2 rounded-full border border-brass/40 text-creamdim hover:border-brass hover:text-brass transition"
+          >
+            Beard Trims
+          </button>
+        </div>
+
+        <div
+          id="galleryGrid"
+          class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+        >
+          <!-- items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section
+      id="contact"
+      class="bg-char2 py-20 md:py-28 border-t border-brass/10"
+    >
+      <div class="max-w-6xl mx-auto px-6 md:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+          <p
+            class="font-display uppercase tracking-[0.3em] text-brass text-xs mb-3"
+          >
+            Get In Touch
+          </p>
+          <h2 class="font-display uppercase text-3xl md:text-4xl">
+            Visit The Men's Hour
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+          <div
+            class="fade-up rounded-sm overflow-hidden border border-brass/25 min-h-[340px]"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3343.1767506268884!2d-96.867707483984!3d33.07813427587656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3ba806c0ebdd%3A0xb61755ea43a87fb9!2sThe%20Men's%20Hour!5e0!3m2!1sen!2sus!4v1594845448865!5m2!1sen!2sus"
+              class="w-full h-full min-h-[340px]"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="The Men's Hour location map"
+            ></iframe>
+          </div>
+
+          <div
+            class="fade-up ticket rounded-sm p-8 md:p-10 flex flex-col justify-between"
+          >
+            <div class="space-y-7">
+              <div class="flex gap-4">
+                <svg
+                  class="w-6 h-6 text-brass shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <p class="text-creamdim leading-relaxed">
+                  5701 Highway 121<br />Suite #160 Room #136<br />The Colony, TX
+                  75056
+                </p>
+              </div>
+
+              <div class="flex gap-4">
+                <svg
+                  class="w-6 h-6 text-brass shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a1.5 1.5 0 001.5-1.5v-2.379a1.5 1.5 0 00-1.06-1.435l-3.394-1.03a1.5 1.5 0 00-1.512.363l-.708.708a1.125 1.125 0 01-1.293.223 12.06 12.06 0 01-5.688-5.688 1.125 1.125 0 01.223-1.293l.708-.708a1.5 1.5 0 00.363-1.512l-1.03-3.394a1.5 1.5 0 00-1.435-1.06H3.75a1.5 1.5 0 00-1.5 1.5z"
+                  />
+                </svg>
+                <a
+                  href="tel:+12144912758"
+                  class="text-creamdim hover:text-brass transition"
+                  >(214) 491-2758</a
+                >
+              </div>
+
+              <div class="flex gap-4">
+                <svg
+                  class="w-6 h-6 text-brass shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+                <a
+                  href="mailto:ty@themenshour.com"
+                  class="text-creamdim hover:text-brass transition"
+                  >ty@themenshour.com</a
+                >
+              </div>
+
+              <div class="flex gap-4">
+                <svg
+                  class="w-6 h-6 text-brass shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p class="text-creamdim leading-relaxed">
+                  Tue–Fri: 9am – 7pm<br />Saturday: 9am – 4pm<br />
+                  <span class="text-creamdim/60 text-sm"
+                    >No-shows will be charged.</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://square.site/book/GH406Q2X6H4HC/the-men-s-hour-the-colony-tx"
+              target="_blank"
+              rel="noopener"
+              class="mt-9 text-center font-display uppercase text-sm tracking-wider bg-brass text-ink px-7 py-3.5 rounded-sm hover:bg-brasslt transition"
+            >
+              Book Appointment Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-ink border-t border-brass/15 pt-16 pb-8">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-8 grid sm:grid-cols-2 md:grid-cols-3 gap-10"
+      >
+        <div>
+          <a href="#top" class="flex items-center gap-3 mb-4">
+            <span
+              class="w-11 h-11 rounded-full border-2 border-brass flex items-center justify-center font-display text-lg text-brass"
+              >TH</span
+            >
+            <span class="font-display leading-tight">
+              <span class="block text-cream">THE MEN'S HOUR</span>
+              <span
+                class="block text-brass text-[11px] tracking-[0.25em] uppercase"
+                >Quality Grooming</span
+              >
+            </span>
+          </a>
+          <p class="text-creamdim/70 text-sm leading-relaxed">
+            Men's quality grooming in The Colony, Texas.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            class="font-display uppercase text-brass text-sm tracking-wider mb-4"
+          >
+            Browse
+          </h4>
+          <ul class="space-y-2 text-creamdim/80 text-sm">
+            <li><a href="#top" class="hover:text-brass transition">Home</a></li>
+            <li>
+              <a href="#about" class="hover:text-brass transition">About</a>
+            </li>
+            <li>
+              <a href="#services" class="hover:text-brass transition"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="#gallery" class="hover:text-brass transition">Gallery</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-brass transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            class="font-display uppercase text-brass text-sm tracking-wider mb-4"
+          >
+            Contact
+          </h4>
+          <ul class="space-y-2 text-creamdim/80 text-sm leading-relaxed">
+            <li>
+              <a
+                href="mailto:ty@themenshour.com"
+                class="hover:text-brass transition"
+                >ty@themenshour.com</a
+              >
+            </li>
+            <li>
+              <a href="tel:+12144912758" class="hover:text-brass transition"
+                >(214) 491-2758</a
+              >
+            </li>
+            <li>
+              5701 Highway 121, Suite #160 Room #136<br />The Colony, TX 75056
+            </li>
+            <li class="pt-1">Tue–Fri 9–7, Sat 9–4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pole-stripe my-8"></div>
+
+      <p class="text-center text-creamdim/50 text-xs tracking-wide px-6">
+        &copy; <span id="year"></span> The Men's Hour. All rights reserved.
+        &nbsp;·&nbsp; No-shows will be charged.
+      </p>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const iconMenu = document.getElementById('iconMenu');
+      const iconClose = document.getElementById('iconClose');
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        iconMenu.classList.toggle('hidden', !isOpen);
+        iconClose.classList.toggle('hidden', isOpen);
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.querySelectorAll('.mobile-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          iconMenu.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        });
+      });
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.fade-up');
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+
+      // Gallery data
+      const galleryItems = [
+        { src: 'images/site/gallery1.jpg', alt: 'Razor Fade', cat: 'haircuts' },
+        { src: 'images/site/gallery2.jpg', alt: 'Beard Shape', cat: 'beard' },
+        {
+          src: 'images/site/gallery3.jpg',
+          alt: 'Classic Haircut',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery4.jpg',
+          alt: 'Design Haircut',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery5.jpg',
+          alt: 'Design Cuts',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery6.jpg',
+          alt: 'Gentleman Cuts',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery7.jpg',
+          alt: 'Straight Razor Shaves',
+          cat: 'beard',
+        },
+        {
+          src: 'images/site/gallery8.jpg',
+          alt: 'Beard Style for Man',
+          cat: 'beard',
+        },
+        { src: 'images/site/gallery1b.jpg', alt: 'Beard Trims', cat: 'beard' },
+        { src: 'images/site/gallery2b.jpg', alt: 'Beard Style', cat: 'beard' },
+        {
+          src: 'images/site/gallery9.jpg',
+          alt: 'Design Haircut',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery10.jpg',
+          alt: 'Hair Styles',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery13.jpg',
+          alt: 'Hair Trimming for Men',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery14.jpg',
+          alt: 'Gentleman Haircuts',
+          cat: 'haircuts',
+        },
+        {
+          src: 'images/site/gallery11.jpg',
+          alt: 'Beard Style for Man',
+          cat: 'beard',
+        },
+        { src: 'images/site/gallery12.jpg', alt: 'Beard Trim', cat: 'beard' },
+      ];
+
+      const grid = document.getElementById('galleryGrid');
+
+      function renderGallery(filter) {
+        grid.innerHTML = '';
+        galleryItems
+          .filter((item) => filter === 'all' || item.cat === filter)
+          .forEach((item) => {
+            const fig = document.createElement('figure');
+            fig.className =
+              'gallery-item fade-up relative overflow-hidden rounded-sm border border-brass/15 aspect-square group';
+            fig.innerHTML = `
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" class="w-full h-full object-cover">
+          <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent text-cream text-xs md:text-sm font-display uppercase tracking-wide px-3 py-2 opacity-0 group-hover:opacity-100 transition">
+            ${item.alt}
+          </figcaption>`;
+            grid.appendChild(fig);
+            io.observe(fig);
+            requestAnimationFrame(() => fig.classList.add('in-view'));
+          });
+      }
+
+      renderGallery('all');
+
+      document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach((b) => {
+            b.classList.remove(
+              'active-filter',
+              'bg-brass',
+              'text-ink',
+              'border-brass',
+            );
+            b.classList.add('border-brass/40', 'text-creamdim');
+          });
+          btn.classList.add(
+            'active-filter',
+            'bg-brass',
+            'text-ink',
+            'border-brass',
+          );
+          btn.classList.remove('border-brass/40', 'text-creamdim');
+          renderGallery(btn.dataset.filter);
+        });
+      });
+    </script>
+  </body>
+</html>
