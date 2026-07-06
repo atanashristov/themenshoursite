@@ -9,7 +9,7 @@ static-server -z
 , or
 
 ```sh
-py -m http.server 8000
+python3 -m http.server 8000 --bind 0.0.0.0
 ```
 
 etc.
